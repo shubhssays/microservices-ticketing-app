@@ -1,6 +1,5 @@
 import request from "supertest";
 import { app } from "../../app";
-import jwt from 'jsonwebtoken'
 
 it('fails when a email that does not exists is supplied', async () => {
     await request(app)
