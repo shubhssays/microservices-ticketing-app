@@ -4,10 +4,11 @@ import { json } from 'body-parser'
 import mongoose from 'mongoose'
 import cookieSession from 'cookie-session'
 
-import { currentUserRouter } from './routes/current-user'
-import { signinRouter } from './routes/signin'
-import { signoutRouter } from './routes/signout'
+
 import { signupRouter } from './routes/signup'
+import { signinRouter } from './routes/signin'
+import { currentUserRouter } from './routes/current-user'
+import { signoutRouter } from './routes/signout'
 import { errorHandler } from './middlewares/error-handler'
 import { NotFoundError } from './errors/not-found-error'
 
@@ -19,10 +20,10 @@ app.use(cookieSession({
     secure: true
 }))
 
-app.use(currentUserRouter)
-app.use(signinRouter)
-app.use(signoutRouter)
 app.use(signupRouter)
+app.use(signinRouter)
+app.use(currentUserRouter)
+app.use(signoutRouter)
 
 app.all('*', async () => {
     throw new NotFoundError
