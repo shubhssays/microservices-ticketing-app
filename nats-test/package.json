@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@devshubhs_micro_ta/common": "^1.0.9",
     "@types/node": "^15.12.2",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^1.1.6",
